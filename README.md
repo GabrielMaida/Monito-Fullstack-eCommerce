@@ -1,4 +1,4 @@
-![Status](https://img.shields.io/badge/Status-Development-blue)
+![Status](https://img.shields.io/badge/Status-In_Development-blue)
 
 # Monito eCommerce
 
@@ -19,7 +19,7 @@ This project was developed using the following technologies:
 
 -   Node.js, TypeScript
 -   NestJS
--   Mongoose
+-   mongoose, ts-node
 
 ### **Database**
 
@@ -99,11 +99,3 @@ Before starting, ensure you have installed:
         ```
 
 4. Access the frontend at `http://localhost:<port>` and the backend at `http://localhost:<port>`
-
-## ✅ Additional Suggestions
-
--   **SOLID** - Fundamental principles for a well-structured architecture.
--   **Clean Code** - Readable and maintainable code.
--   **Unit Tests** - Implementation of tests to ensure stability.
--   **Swagger** - Interactive API documentation.
--   **ORM or Sequelize** - Easier database management.

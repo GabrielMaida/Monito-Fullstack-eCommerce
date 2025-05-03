@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "module": "commonjs", // Usa o sistema de módulos CommonJS, compatível com Node.js
+    "declaration": false, // Impede a geração de arquivos .d.ts com definições de tipos
+    "sourceMap": false, // Impede a geração de arquivos .map, usados para depuração
+    "removeComments": true, // Remove comentários do código transpilado para otimizar tamanho
+    "emitDecoratorMetadata": true, // Garante que decoradores tenham metadados disponíveis
+    "experimentalDecorators": true, // Permite uso de decoradores experimentais do TypeScript
+    //"allowSyntheticDefaultImports": true, // (Comentado) Permite importação de módulos sem default export
+    "target": "ES2023", // Define a versão do JavaScript para a qual o código será transpilado
+    "outDir": "./dist", // Define a pasta onde os arquivos compilados serão armazenados
+    //"baseUrl": "./", // (Comentado) Define o diretório base para resolução de módulos
+    //"incremental": true, // (Comentado) Habilita compilação incremental para melhorar performance
+    "skipLibCheck": true, // Pula checagem de tipos em bibliotecas externas para acelerar o build
+    "strictNullChecks": true, // Exige verificação estrita de valores nulos ou indefinidos
+    "forceConsistentCasingInFileNames": true, // Impede diferenças de maiúsculas/minúsculas em nomes de arquivos
+    "noImplicitAny": true, // Impede variáveis sem definição de tipo explícito
+    //"strictBindCallApply": true, // (Comentado) Faz verificações rigorosas em bind(), call(), apply()
+    //"noFallthroughCasesInSwitch": true // (Comentado) Evita casos onde switch pode "cair" em outro case
+  }
+}

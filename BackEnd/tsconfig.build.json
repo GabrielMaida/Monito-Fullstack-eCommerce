@@ -1,0 +1,7 @@
+{
+	"extends": "./tsconfig.json", // Herda as configurações do tsconfig.json principal
+	"exclude": [
+		"node_modules", // Ignora pacotes externos para evitar processamento desnecessário
+		"dist" // Evita recompilar arquivos já compilados
+	]
+}
