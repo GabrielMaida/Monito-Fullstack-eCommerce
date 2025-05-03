@@ -1,4 +1,11 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
+import Header from "./header";
+import "./styles/fonts.css";
+// import "./styles/main.css";
 
-createRoot(document.getElementById("root")!).render(<StrictMode></StrictMode>);
+createRoot(document.getElementById("root")!).render(
+	<StrictMode>
+		<Header />
+	</StrictMode>
+);

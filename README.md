@@ -54,7 +54,7 @@ The project's API exposes these endpoints for data retrieval:
 
 The application's design follows a predefined Figma model, ensuring an intuitive interface aligned with best usability practices.
 
-![Template](docs/template.png)
+![Template](docs/product.png)
 
 ## 💻 How to Run the Project
 

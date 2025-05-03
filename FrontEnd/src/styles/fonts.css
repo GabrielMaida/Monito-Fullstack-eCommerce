@@ -1,0 +1,17 @@
+@font-face {
+	font-family: "SVNGilroy";
+	src: url("/fonts/SVNGilroy Light.otf") format("opentype");
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "SVNGilroy";
+	src: url("/fonts/SVNGilroy Bold.otf") format("opentype");
+	font-weight: 700;
+	font-style: normal;
+}
+
+* {
+	font-family: "SVNGilroy", sans-serif;
+}
