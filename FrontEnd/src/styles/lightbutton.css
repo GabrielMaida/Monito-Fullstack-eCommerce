@@ -1,0 +1,5 @@
+.IconComponent:hover div svg:last-child path {
+	stroke: white;
+	transition-property: color, stroke;
+	transition-duration: 150ms;
+}
