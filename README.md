@@ -42,13 +42,19 @@ This project was developed using the following technologies:
 
 The project's API exposes these endpoints for data retrieval:
 
+🔧***Under Working***🔧
+<!--
 -   `GET /categories` - Returns all available categories
 -   `GET /products` - Returns the product listing with pagination
 -   `GET /product/:id` - Returns details of a specific product
+-->
 
 ## 📂 Folder Structure
 
+🔧***Under Working***🔧
+<!--
 ![Folder Structure](docs/folders.png)
+-->
 
 ## 🎨 UI/UX
 
@@ -67,6 +73,8 @@ Before starting, ensure you have installed:
 
 ### **Steps**
 
+🔧***Under Working***🔧
+<!--
 1. Clone this repository:
 
     ```sh
@@ -99,3 +107,4 @@ Before starting, ensure you have installed:
         ```
 
 4. Access the frontend at `http://localhost:<port>` and the backend at `http://localhost:<port>`
+-->
