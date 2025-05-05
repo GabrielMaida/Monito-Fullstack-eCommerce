@@ -1,5 +1,5 @@
-import PlayButton from "../assets/play.svg?react";
-import RightArrow from "../assets/rightarrow.svg?react";
+import PlayButton from "../assets/svgs/play.svg?react";
+import RightArrow from "../assets/svgs/rightarrow.svg?react";
 import "../styles/lightbutton.css";
 
 type ButtonProps = {

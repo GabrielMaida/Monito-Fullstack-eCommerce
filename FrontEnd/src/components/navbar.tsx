@@ -1,5 +1,5 @@
-import Logo from "../assets/Logo.svg?react";
-import SearchIcon from "../assets/search-icon.svg?react";
+import Logo from "../assets/svgs/Logo.svg?react";
+import SearchIcon from "../assets/svgs/search-icon.svg?react";
 import DarkButton from "./darkbutton";
 
 function NavBar() {
