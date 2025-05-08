@@ -1,0 +1,38 @@
+GET http://localhost:3101/api
+// GET Root
+
+###
+GET http://localhost:3101/api/product
+// GET All Products
+
+###
+GET http://localhost:3101/api/product/1000078
+// GET Product by SKU
+
+###
+POST http://localhost:3101/api/product
+// POST Create Product
+Content-Type: application/json
+
+{
+  "sku": "1000078",
+  "name": "Shiba Inu Sepia",
+  "price": 34000000,
+  "gender": "Female",
+  "age": "2 Months",
+  "size": "Medium",
+  "color": "Red",
+  "vaccinated": true,
+  "dewormed": true,
+  "cert": true,
+  "microchip": true,
+  "location": "Vietnam",
+  "publisheddate": "08-05-2025",
+  "additionalinfo": "Pure breed Shih Tzu.\nGood body structure.\nWith MKA cert and Microchip.\nFather from champion lineage.",
+  "images": [
+    "https://example.com/image1.jpg",
+    "https://example.com/image2.jpg"
+  ],
+  "product": "Dog",
+  "promo": null
+}
