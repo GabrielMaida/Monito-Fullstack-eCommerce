@@ -8,7 +8,7 @@ import { AppService } from "./app.service";
 	imports: [
 		ProductModule,
 		MongooseModule.forRoot(
-			"mongodb+srv://GabrielAntonio:cesusc2024@cluster0.vs1rl.mongodb.net/monito"
+			"mongodb+srv://@cluster0.vs1rl.mongodb.net/monito"
 		),
 	],
 	controllers: [AppController],

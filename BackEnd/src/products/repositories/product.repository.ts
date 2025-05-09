@@ -10,16 +10,35 @@ export class ProductRepository {
 		@InjectModel(Product.name) private productModel: Model<ProductDocument>
 	) {}
 
-	async getAllProducts(): Promise<IProductEntity[]> {
-		return await this.productModel.find().exec();
+	async getProductsWithQuery(
+		product?: string,
+		exclude?: string
+	): Promise<IProductEntity[]> {
+		let filter = {};
+
+		if (product) {
+			filter = { product: product };
+		} else if (exclude) {
+			filter = { product: { $ne: exclude } };
+		}
+
+		const productsReturned = await this.productModel.find(filter).exec();
+
+		if (!productsReturned || productsReturned.length === 0) {
+			throw new Error("No matching products found");
+		}
+
+		return productsReturned.map((product) => product.toObject());
 	}
 
 	async getProductBySku(sku: string): Promise<IProductEntity> {
-		const productReturned = await this.productModel.findOne({ sku }).exec();
-		if (!productReturned) {
-			throw new Error("Product not found");
+		const productsReturned = await this.productModel
+			.findOne({ sku })
+			.exec();
+		if (!productsReturned) {
+			throw new Error("No matching product found");
 		}
-		return productReturned.toObject();
+		return productsReturned.toObject();
 	}
 
 	async createProduct(product: IProductEntity): Promise<IProductEntity> {

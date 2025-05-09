@@ -6,8 +6,14 @@ import { ProductRepository } from "../repositories/product.repository";
 export class ProductService {
 	constructor(private readonly productRepository: ProductRepository) {}
 
-	async getAllProducts(): Promise<IProductEntity[]> {
-		return await this.productRepository.getAllProducts();
+	async getProductsWithQuery(
+		product?: string,
+		exclude?: string
+	): Promise<IProductEntity[]> {
+		return await this.productRepository.getProductsWithQuery(
+			product,
+			exclude
+		);
 	}
 
 	async getProductBySku(sku: string): Promise<IProductEntity> {
