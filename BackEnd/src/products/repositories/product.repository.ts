@@ -36,7 +36,7 @@ export class ProductRepository {
 			.findOne({ sku })
 			.exec();
 		if (!productsReturned) {
-			throw new Error("No matching product found");
+			throw new NotFoundException("No matching product found");
 		}
 		return productsReturned.toObject();
 	}
