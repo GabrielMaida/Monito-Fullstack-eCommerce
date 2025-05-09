@@ -25,7 +25,7 @@ export class ProductRepository {
 		const productsReturned = await this.productModel.find(filter).exec();
 
 		if (!productsReturned || productsReturned.length === 0) {
-			throw new Error("No matching products found");
+			throw new NotFoundException("No matching products found");
 		}
 
 		return productsReturned.map((product) => product.toObject());
