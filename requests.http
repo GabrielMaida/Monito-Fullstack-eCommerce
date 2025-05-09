@@ -1,0 +1,69 @@
+### GET Root
+GET http://localhost:3101/api
+
+
+### GET All Products
+GET http://localhost:3101/api/product
+
+
+### GET Just Dogs
+GET http://localhost:3101/api/product?product=Dog
+
+
+### GET All Products unless Dogs
+GET http://localhost:3101/api/product?exclude=Dog
+
+
+### GET Product by SKU
+GET http://localhost:3101/api/product/230
+
+
+### POST Create Product
+POST http://localhost:3101/api/product
+Content-Type: application/json
+
+
+// Dog Model
+{
+  "sku": "230",
+  "name": "White Medium Malamute",
+  "price": 7000000,
+  "gender": "Female",
+  "age": "2 Months",
+  "size": "Medium",
+  "color": "White",
+  "vaccinated": true,
+  "dewormed": false,
+  "cert": false,
+  "microchip": true,
+  "location": "Vietnam",
+  "publisheddate": "10-05-2025",
+  "additionalinfo": "Father from champion lineage.",
+  "images": [
+    "https://i.postimg.cc/NFM4Zp1z/medium-alaskan-malamute-white.png",
+    "https://i.postimg.cc/NFM4Zp1z/medium-alaskan-malamute-white.png"
+  ],
+  "product": "Dog",
+  "promo": null
+}
+
+// Other Products Model
+<!--{
+  "sku": "035",
+  "name": "Plush Pet Toy",
+  "price": 250000,
+  "gender": null,
+  "age": null,
+  "size": "500gm",
+  "color": null,
+  "vaccinated": null,
+  "dewormed": null,
+  "cert": null,
+  "microchip": null,
+  "location": null,
+  "publisheddate": "09-05-2025",
+  "additionalinfo": null,
+  "images": ["https://i.postimg.cc/1RNdyHP2/plush-pet.png"],
+  "product": "Toy",
+  "promo": "Free Food & Shaker"
+}-->
