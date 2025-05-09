@@ -22,8 +22,6 @@ GET http://localhost:3101/api/product/230
 POST http://localhost:3101/api/product
 Content-Type: application/json
 
-
-// Dog Model
 {
   "sku": "230",
   "name": "White Medium Malamute",
@@ -46,24 +44,3 @@ Content-Type: application/json
   "product": "Dog",
   "promo": null
 }
-
-// Other Products Model
-<!--{
-  "sku": "035",
-  "name": "Plush Pet Toy",
-  "price": 250000,
-  "gender": null,
-  "age": null,
-  "size": "500gm",
-  "color": null,
-  "vaccinated": null,
-  "dewormed": null,
-  "cert": null,
-  "microchip": null,
-  "location": null,
-  "publisheddate": "09-05-2025",
-  "additionalinfo": null,
-  "images": ["https://i.postimg.cc/1RNdyHP2/plush-pet.png"],
-  "product": "Toy",
-  "promo": "Free Food & Shaker"
-}-->
