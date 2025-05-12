@@ -2,4 +2,9 @@
 	box-sizing: border-box;
 	font-family: "Gilroy", sans-serif;
 	/* font-weight: 500; */
+	input::placeholder,
+	textarea::placeholder {
+		color: black;
+		font-size: 0.8rem;
+	}
 }

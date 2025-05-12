@@ -1,22 +1,22 @@
-import Logo from "../assets/svgs/Logo.svg?react";
-import SearchIcon from "../assets/svgs/search-icon.svg?react";
+import Logo from "../../assets/svgs/logo.svg?react";
+import SearchIcon from "../../assets/svgs/search-icon.svg?react";
 import DarkButton from "./darkbutton";
 
-function NavBar() {
+export default function NavBar() {
 	return (
 		<nav className="items-center flex flex-row flex-wrap justify-between w-4/5 m-auto max-h-44 py-3 my-4">
 			<Logo />
 			<ul className="flex flex-row gap-5 font-bold ml-4">
-				<li className="rounded-full hover:text-white hover:bg-blue-950 py-1 px-5 hover:cursor-pointer">
+				<li className="rounded-full hover:text-white hover:bg-[#003459] py-1 px-5 hover:cursor-pointer">
 					Home
 				</li>
-				<li className="rounded-full hover:text-white hover:bg-blue-950 py-1 px-5 hover:cursor-pointer">
+				<li className="rounded-full hover:text-white hover:bg-[#003459] py-1 px-5 hover:cursor-pointer">
 					Category
 				</li>
-				<li className="rounded-full hover:text-white hover:bg-blue-950 py-1 px-5 hover:cursor-pointer">
+				<li className="rounded-full hover:text-white hover:bg-[#003459] py-1 px-5 hover:cursor-pointer">
 					About
 				</li>
-				<li className="rounded-full hover:text-white hover:bg-blue-950 py-1 px-5 hover:cursor-pointer">
+				<li className="rounded-full hover:text-white hover:bg-[#003459] py-1 px-5 hover:cursor-pointer">
 					Contact
 				</li>
 			</ul>
@@ -41,5 +41,3 @@ function NavBar() {
 		</nav>
 	);
 }
-
-export default NavBar;
