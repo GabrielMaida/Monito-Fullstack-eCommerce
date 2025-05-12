@@ -1,5 +1,5 @@
-import NavBar from "../utils/navbar";
-import Hero from "./hero";
+import NavBar from "../utils/navbar.utils";
+import Hero from "./hero.home";
 
 export default function Header() {
 	return (

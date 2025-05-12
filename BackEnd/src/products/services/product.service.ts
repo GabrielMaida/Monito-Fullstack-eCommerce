@@ -8,11 +8,21 @@ export class ProductService {
 
 	async getProductsWithQuery(
 		product?: string,
-		exclude?: string
+		exclude?: string,
+		gender?: string,
+		color?: string,
+		size?: string,
+		page: number = 1,
+		limit: number = 10
 	): Promise<IProductEntity[]> {
 		return await this.productRepository.getProductsWithQuery(
 			product,
-			exclude
+			exclude,
+			gender,
+			color,
+			size,
+			page,
+			limit
 		);
 	}
 

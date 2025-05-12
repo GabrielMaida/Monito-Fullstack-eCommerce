@@ -1,5 +1,5 @@
-import DarkButton from "../utils/darkbutton";
-import LightButton from "../utils/lightbutton";
+import DarkButton from "../utils/darkbutton.utils";
+import LightButton from "../utils/lightbutton.utils";
 
 export default function Hero() {
 	return (

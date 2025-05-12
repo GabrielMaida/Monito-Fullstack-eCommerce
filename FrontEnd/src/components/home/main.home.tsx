@@ -1,4 +1,4 @@
-import WhatsNew from "./whatsnew";
+import WhatsNew from "./whatsnew.home";
 
 export default function Main() {
 	return (

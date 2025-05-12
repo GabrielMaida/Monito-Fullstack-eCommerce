@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { IProductEntity } from "../../interfaces/IProductEntity";
-import LightButton from "../utils/lightbutton";
+import LightButton from "../utils/lightbutton.utils";
 
 export default function WhatsNew() {
 	const [dogs, setDogs] = useState<IProductEntity[]>([]);
@@ -23,7 +23,9 @@ export default function WhatsNew() {
 				<h2 className="flex-1 font-bold text-xl">
 					Take A Look At Some Of Our Pets
 				</h2>
-				<LightButton text="View More" icon="arrow" />
+				<a href="/products">
+					<LightButton text="View More" icon="arrow" />
+				</a>
 			</header>
 			{
 				<div className="relative flex flex-row flex-wrap justify-between gap-y-3 text-[#00171F]">
