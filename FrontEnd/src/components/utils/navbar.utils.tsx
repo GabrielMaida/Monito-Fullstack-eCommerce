@@ -20,9 +20,9 @@ export default function NavBar() {
 			</div>
 			<DarkButton text="Join the community" weight="bold" />
 			<div className="flex flex-row items-center justify-center gap-2 rounded-full hover:bg-white py-1 px-4 hover:cursor-pointer">
-				<img src="./svgs/vnd.svg" alt="Vietnamese money icon" />
+				<img src="../svgs/vnd.svg" alt="Vietnamese money icon" />
 				<p>VND</p>
-				<img src="./svgs/opendown.svg" alt="Open dropdown button icon" />
+				<img src="../svgs/opendown.svg" alt="Open dropdown button icon" />
 			</div>
 		</nav>
 	);

@@ -4,7 +4,7 @@ import Footer from "../components/utils/footer.utils";
 
 export default function HomePage() {
 	return (
-		<div>
+		<div className="flex flex-col gap-8">
 			<Header />
 			<Main />
 			<Footer />

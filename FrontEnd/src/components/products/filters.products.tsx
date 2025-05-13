@@ -13,6 +13,7 @@ export default function Filters() {
 		limit: 6,
 	});
 	const img_url = ["./svgs/red.svg", "./svgs/apricot.svg", "./svgs/black.svg", "./svgs/blackwhite.svg", "./svgs/silver.svg", "./svgs/tan.svg"];
+	const endpoint = "/products/";
 
 	useEffect(() => {
 		const query = new URLSearchParams(filters as any).toString();
@@ -101,17 +102,19 @@ export default function Filters() {
 				</div>
 				<div className="grid grid-cols-3 gap-6">
 					{products.map((product) => (
-						<div key={product.sku} className="w-full px-4 py-2 rounded-lg text-[1.05rem] font-bold flex flex-col gap-2 shadow-md hover:shadow-lg transition-shadow cursor-pointer">
-							<img src={product.images[0]} alt={product.name} className="aspect-square object-cover rounded-md mb-4" />
-							<h2 className="mt-1">
-								MO{product.sku} - {product.name}
-							</h2>
-							<p className="text-[#667479] text-xs tracking-wide">
-								<span className="font-medium">Gene: </span>
-								{product.gender} •<span className="font-medium"> Age: </span> {product.age}
-							</p>
-							<p className="mb-2">{product.price.toLocaleString()} VND</p>
-						</div>
+						<a href={endpoint + product.sku}>
+							<div key={product.sku} className="w-full px-4 py-2 rounded-lg text-[1.05rem] font-bold flex flex-col gap-2 shadow-md hover:shadow-lg transition-shadow cursor-pointer">
+								<img src={product.images[0]} alt={product.name} className="aspect-square object-cover rounded-md mb-4" />
+								<h2 className="mt-1">
+									MO{product.sku} - {product.name}
+								</h2>
+								<p className="text-[#667479] text-xs tracking-wide">
+									<span className="font-medium">Gene: </span>
+									{product.gender} •<span className="font-medium"> Age: </span> {product.age}
+								</p>
+								<p className="mb-2">{product.price.toLocaleString()} VND</p>
+							</div>
+						</a>
 					))}
 				</div>
 				<footer className="flex justify-between mt-8 mb-12">
