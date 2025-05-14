@@ -157,7 +157,7 @@ monito-fullstack-ecommerce/
     git clone https://github.com/yourusername/monito-fullstack-ecommerce.git
     cd monito-fullstack-ecommerce
     ```
-
+    
 2. **Install Frontend Dependencies:**
 
     ```bash
