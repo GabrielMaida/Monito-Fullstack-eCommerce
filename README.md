@@ -1,101 +1,130 @@
-![Status](https://img.shields.io/badge/Status-In_Development-blue)
+![Status](https://img.shields.io/badge/Status-Ready_for_Review-green)
 
 # Monito eCommerce
 
-FullStack eCommerce project with a React Frontend and a Node.js Backend, using NestJS and MongoDB. The goal is to improve web development skills while focusing on best practices in software architecture and programming.
+A full-featured eCommerce platform for pet products with a React Frontend and a NestJS Backend, connected to MongoDB. This project demonstrates modern web development practices and architecture patterns in a complete, functional application.
+
+## 🎯 Project Objective
+
+The Monito eCommerce platform was built to create a complete online shopping experience for pet products and services. The application focuses on usability, performance, and design aesthetics while implementing best practices in software architecture and programming.
 
 ## 🚀 Technologies
 
-This project was developed using the following technologies:
-
 ### **Frontend**
 
--   Node.js, Vite, React
--   HTML, CSS, JavaScript
--   TypeScript
--   Tailwind CSS
+-   **Framework**: React 19 with React Router DOM 7
+-   **Build Tool**: Vite 6
+-   **Language**: TypeScript 5.7
+-   **Styling**: Tailwind CSS 4
+-   **Asset Management**: SVG integration with vite-plugin-svgr
+-   **Package Manager**: npm
 
 ### **Backend**
 
--   Node.js, TypeScript
--   NestJS
--   mongoose, ts-node
+-   **Framework**: NestJS 11
+-   **Language**: TypeScript 5.7
+-   **Database ODM**: Mongoose 8.14
+-   **API Design**: RESTful architecture
+-   **Package Manager**: npm
 
 ### **Database**
 
--   MongoDB
+-   MongoDB Atlas (Cloud-hosted)
 
-## 📌 Requirements
+## 💻 Key Features Implemented
 
-### **Main Features**
+-   **Product Category Browsing**: Filter products by type, color, size, and gender
+-   **Featured Products Display**: Showcase of highlighted products on the homepage
+-   **Detailed Product View**: Complete product information with multiple image display
+-   **Pagination System**: Navigate through product listings efficiently
+-   **Advanced Filtering**: Filter products by various attributes
+-   **Interactive UI Elements**: Smooth animations on hover and state changes
+-   **Image Gallery**: Dynamic selection of product images
+-   **Responsive Design**: Works across multiple device sizes
 
--   Product category listing
--   Display of featured products on the homepage
--   Product detail visualization
--   Pagination for the product listing
--   Functional filters for product search
--   Mouse hover animation for products
--   Dynamic image display in the product details
--   Contact form for inquiries
+## 📡 API Documentation
 
-### **API Endpoints**
+The backend exposes the following REST endpoints:
 
-The project's API exposes these endpoints for data retrieval:
+### Product Endpoints
 
--   `GET /categories` - Returns all available categories
--   `GET /products` - Returns the product listing with pagination
--   `GET /product/:id` - Returns details of a specific product
+#### `GET /api`
 
-## 📂 Folder Structure
+-   **Description**: Basic health check endpoint
+-   **Response**: Text confirmation that API is working
 
-![Folder Structure](docs/folders.png)
+#### `GET /api/product`
 
-## 🎨 UI/UX
+-   **Description**: Retrieve products with optional filtering
+-   **Query Parameters**:
+    -   `product` (optional): Filter by product type (e.g., "Dog")
+    -   `exclude` (optional): Exclude specific product type (e.g., "Dog")
+    -   `gender` (optional): Filter by gender ("Male" or "Female")
+    -   `color` (optional): Filter by color
+    -   `size` (optional): Filter by size
+    -   `page` (optional, default: 1): Page number for pagination
+    -   `limit` (optional, default: 10): Number of items per page
+-   **Example**: `GET /api/product?product=Dog&gender=Female&page=1&limit=6`
 
-The application's design follows a predefined Figma model, ensuring an intuitive interface aligned with best usability practices.
+#### `GET /api/product/:sku`
 
-![Template](docs/product.png)
+-   **Description**: Retrieve a specific product by SKU
+-   **Path Parameters**:
+    -   `sku`: The unique SKU identifier for the product
+-   **Example**: `GET /api/product/230`
 
-## 💻 How to Run the Project
+#### `POST /api/product`
 
-### **Prerequisites**
+-   **Description**: Create a new product (for admin use)
+-   **Request Body**: JSON object with product details (see example in requests.http)
+-   **Authentication**: Not implemented in demo version
 
-Before starting, ensure you have installed:
+## 📂 Project Structure
 
--   Node.js
--   A package manager (npm or yarn)
+monito-fullstack-ecommerce/ ├── .gitignore ├── LICENSE ├── README.md ├── requests.http # API request examples ├── BackEnd/ │ ├── src/ │ │ ├── main.ts # App bootstrap │ │ ├── app.module.ts # Root module │ │ ├── app.controller.ts # Root controller │ │ ├── app.service.ts # Root service │ │ └── products/ │ │ ├── product.module.ts │ │ ├── product.controller.ts │ │ ├── interfaces/ │ │ │ └── IProductEntity.ts │ │ ├── repositories/ │ │ │ └── product.repository.ts │ │ ├── schemas/ │ │ │ └── product.schema.ts │ │ └── services/ │ │ └── product.service.ts │ ├── nest-cli.json │ ├── package.json │ ├── tsconfig.json │ └── tsconfig.build.json ├── FrontEnd/ │ ├── src/ │ │ ├── app.tsx # Main React application │ │ ├── assets/ │ │ │ └── svgs/ # SVG assets │ │ ├── components/ │ │ │ ├── home/ # Home page components │ │ │ ├── product/ # Product detail components │ │ │ ├── products/ # Products listing components │ │ │ └── utils/ # Shared UI components │ │ ├── interfaces/ │ │ │ └── IProductEntity.ts │ │ ├── pages/ │ │ │ ├── home.page.tsx │ │ │ ├── product.page.tsx │ │ │ └── products.page.tsx │ │ └── styles/ # CSS styles │ ├── public/ │ │ ├── fonts/ # Font files │ │ ├── imgs/ # Image assets │ │ └── svgs/ # Public SVG files │ ├── index.html │ ├── package.json │ ├── vite.config.ts │ └── tsconfig.json └── docs/ # Documentation assets ├── folders.png ├── home.png └── product.png
 
-### **Steps**
+## 🚀 Getting Started
 
-1. Clone this repository:
+### Prerequisites
 
-    ```sh
-    git clone https://github.com/your-username/repository-name.git
+-   Node.js (version 18 or later)
+-   npm or yarn package manager
+-   Git
+
+### Installation & Setup
+
+1. Clone the repository:
+
+    ```bash
+
+    git clone https://github.com/yourusername/monito-fullstack-ecommerce.git
+    cd monito-fullstack-ecommerce
+
     ```
 
-2. Install frontend and backend dependencies:
-
-    ```sh
-    cd frontend
+    Install frontend dependencies:
+    cd FrontEnd
     npm install
-    cd ../backend
-    npm install
-    ```
 
-3. Run the project:
+Install backend dependencies:
+cd ../BackEnd
+npm install
 
-    - For the frontend:
+Running the Application
+Start the backend server:
+cd BackEnd
+npm run start:dev
 
-        ```sh
-        cd frontend
-        npm run dev
-        ```
+The API will be available at http://localhost:3101/api
 
-    - For the backend:
+In a new terminal, start the frontend development server:
+cd FrontEnd
+npm run dev
 
-        ```sh
-        cd backend
-        npm run start:dev
-        ```
+The frontend will be available at http://localhost:5173
 
-4. Access the frontend at `http://localhost:<port>` and the backend at `http://localhost:<port>`
+Database Access
+The application is pre-configured to connect to a MongoDB Atlas database with a read-only user. No additional database setup is required for running the application.
+
+📝 License
+This project is licensed under the MIT License - see the LICENSE file for details. ```

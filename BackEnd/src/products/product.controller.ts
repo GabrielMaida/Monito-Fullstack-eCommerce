@@ -9,9 +9,22 @@ export class ProductController {
 	@Get()
 	getProductsWithQuery(
 		@Query("product") product?: string,
-		@Query("exclude") exclude?: string
+		@Query("exclude") exclude?: string,
+		@Query("gender") gender?: string,
+		@Query("color") color?: string,
+		@Query("size") size?: string,
+		@Query("page") page: number = 1,
+		@Query("limit") limit: number = 10
 	): Promise<IProductEntity[]> {
-		return this.productService.getProductsWithQuery(product, exclude);
+		return this.productService.getProductsWithQuery(
+			product,
+			exclude,
+			gender,
+			color,
+			size,
+			page,
+			limit
+		);
 	}
 
 	@Get(":sku")

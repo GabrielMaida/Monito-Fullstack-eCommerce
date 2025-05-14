@@ -12,17 +12,28 @@ export class ProductRepository {
 
 	async getProductsWithQuery(
 		product?: string,
-		exclude?: string
+		exclude?: string,
+		gender?: string,
+		color?: string,
+		size?: string,
+		page: number = 1,
+		limit: number = 6
 	): Promise<IProductEntity[]> {
-		let filter = {};
+		let filter: any = {};
 
-		if (product) {
-			filter = { product: product };
-		} else if (exclude) {
-			filter = { product: { $ne: exclude } };
-		}
+		if (product) filter.product = product;
+		if (exclude) filter.product = { $ne: exclude };
+		if (gender) filter.gender = gender;
+		if (color) filter.color = color;
+		if (size) filter.size = size;
 
-		const productsReturned = await this.productModel.find(filter).exec();
+		const skip = (page - 1) * limit;
+
+		const productsReturned = await this.productModel
+			.find(filter)
+			.skip(skip)
+			.limit(limit)
+			.exec();
 
 		if (!productsReturned || productsReturned.length === 0) {
 			throw new NotFoundException("No matching products found");
