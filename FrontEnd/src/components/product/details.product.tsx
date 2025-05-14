@@ -14,7 +14,6 @@ import LightButton from "../utils/lightbutton.utils";
 export default function Details({ sku }: { sku?: string }) {
 	const [product, setProduct] = useState<IProductEntity | null>(null);
 	const [selectedImage, setSelectedImage] = useState<number>(0);
-	const size_endpoint = "/products?product=Dog&size=";
 
 	if (!sku) {
 		throw new Error("SKU is required");
@@ -33,12 +32,15 @@ export default function Details({ sku }: { sku?: string }) {
 		}
 	}, [sku]);
 
+	const product_endpoint = "/products?product=" + product?.product;
+	const size_endpoint = "/products?product=" + product?.product + "&size=";
+
 	return (
 		<>
 			<div className="flex flex-row gap-10 border border-[#EBEEEF] rounded-[20px] p-3">
 				<div className="w-1/2 flex flex-col gap-5 mb-5 items-start font-bold text-[#002A48]">
 					<section>
-						<img src={product?.images[selectedImage]} alt={product?.name} className="w-full aspect-[20/17] object-cover object-center rounded-lg" />
+						<img src={product?.images[selectedImage]} alt={product?.name} className="w-full aspect-[20/17] object-scale-down rounded-lg" />
 					</section>
 
 					<section className="flex gap-3 mb-3">
@@ -75,15 +77,17 @@ export default function Details({ sku }: { sku?: string }) {
 						<a href="/">
 							<span className="hover:text-[#003459] hover:cursor-pointer">Home</span>
 						</a>
-						<span className="mx-2">›</span>
-						<a href="/products?product=Dog">
-							<span className="hover:text-[#003459] hover:cursor-pointer">Dog</span>
+						<span className="mx-2">&gt;</span>
+						<a href={product_endpoint}>
+							<span className="hover:text-[#003459] hover:cursor-pointer">{product?.product}</span>
 						</a>
-						<span className="mx-2">›</span>
+						<span className="mx-2">&gt;</span>
 						<a href={size_endpoint + product?.size}>
-							<span className="hover:text-[#003459] hover:cursor-pointer">{product?.size} Dog</span>
+							<span className="hover:text-[#003459] hover:cursor-pointer">
+								{product?.size} {product?.product}
+							</span>
 						</a>
-						<span className="mx-2">›</span>
+						<span className="mx-2">&gt;</span>
 						<span className="text-[#00171F] hover:cursor-pointer hover:underline">{product?.name}</span>
 					</div>
 
@@ -99,58 +103,37 @@ export default function Details({ sku }: { sku?: string }) {
 					</div>
 
 					<div className="grid grid-cols-2 gap-x-8 gap-y-4">
-						<div>
-							<p className="text-sm text-[#667479]">Gender</p>
-							<p className="font-medium">&nbsp; {product?.gender}</p>
-						</div>
-						<div>
-							<p className="text-sm text-[#667479]">Age</p>
-							<p className="font-medium">&nbsp; {product?.age}</p>
-						</div>
-						<div>
-							<p className="text-sm text-[#667479]">Size</p>
-							<p className="font-medium">&nbsp; {product?.size}</p>
-						</div>
-						<div>
-							<p className="text-sm text-[#667479]">Color</p>
-							<p className="font-medium">&nbsp; {product?.color}</p>
-						</div>
-						<div>
-							<p className="text-sm text-[#667479]">Vaccinated</p>
-							<p className="font-medium">&nbsp; {product?.vaccinated ? "Yes" : "No"}</p>
-						</div>
-						<div>
-							<p className="text-sm text-[#667479]">Dewormed</p>
-							<p className="font-medium">&nbsp; {product?.dewormed ? "Yes" : "No"}</p>
-						</div>
-						<div>
-							<p className="text-sm text-[#667479]">Cert</p>
-							<p className="font-medium">&nbsp; {product?.cert ? "Yes (MKA)" : "No"}</p>
-						</div>
-						<div>
-							<p className="text-sm text-[#667479]">Microchip</p>
-							<p className="font-medium">&nbsp; {product?.microchip ? "Yes" : "No"}</p>
-						</div>
-						<div>
-							<p className="text-sm text-[#667479]">Location</p>
-							<p className="font-medium">&nbsp; {product?.location}</p>
-						</div>
-						<div>
-							<p className="text-sm text-[#667479]">Published Date</p>
-							<p className="font-medium">&nbsp; {product?.publisheddate}</p>
-						</div>
+						{product &&
+							Object.entries({
+								Gender: product.gender ? "Yes" : "No",
+								Age: product.age ? "Yes" : "No",
+								Size: product.size,
+								Color: product.color ? "Yes" : "No",
+								Vaccinated: product.vaccinated ? "Yes" : "No",
+								Dewormed: product.dewormed ? "Yes" : "No",
+								Cert: product.cert ? "Yes (MKA)" : "No",
+								Microchip: product.microchip ? "Yes" : "No",
+								Location: product.location,
+								"Published Date": product.publisheddate,
+							}).map(([label, value]) => (
+								<div key={label}>
+									<p className="text-sm text-[#667479]">{label}</p>
+									<p className="font-medium">&nbsp; {value}</p>
+								</div>
+							))}
 					</div>
-
 					<div>
 						<p className="text-sm text-[#667479]">Additional Information</p>
 						<div className="font-medium">
 							<div>
-								{product?.additionalinfo
-									? product.additionalinfo
-											.split(";")
-											.slice()
-											.map((info) => <p>&nbsp; {info}</p>)
-									: "No additional Infos"}
+								{product?.additionalinfo ? (
+									product.additionalinfo
+										.split(";")
+										.slice()
+										.map((info) => <p>&nbsp; {info}</p>)
+								) : (
+									<p>&nbsp;No additional Infos</p>
+								)}
 							</div>
 						</div>
 					</div>

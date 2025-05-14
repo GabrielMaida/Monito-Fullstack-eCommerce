@@ -93,7 +93,7 @@ export default function Filters() {
 			</aside>
 			<main className="flex-1">
 				<div className="flex flex-row gap-5 items-baseline mb-3">
-					<h1 className="text-2xl font-bold text-[#003459]">Products</h1>
+					<h1 className="text-2xl font-bold text-[#003459]">Dogs</h1>
 					<p className="flex-1 text-[#667479] text-sm">{products.length} puppies</p>
 					<button className="opendownbutton border-2 border-[#667479] rounded-full py-1 px-5 text-[#667479] flex flex-row gap-4 items-center hover:bg-[#667479] hover:text-white hover:cursor-pointer">
 						<p>Sort by: Recent</p>
@@ -103,9 +103,9 @@ export default function Filters() {
 				<div className="grid grid-cols-3 gap-6">
 					{products.map((product) => (
 						<a href={endpoint + product.sku}>
-							<div key={product.sku} className="w-full px-4 py-2 rounded-lg text-[1.05rem] font-bold flex flex-col gap-2 shadow-md hover:shadow-lg transition-shadow cursor-pointer">
-								<img src={product.images[0]} alt={product.name} className="aspect-square object-cover rounded-md mb-4" />
-								<h2 className="mt-1">
+							<div key={product.sku} className="w-full h-full px-4 py-2 rounded-lg text-[1.05rem] font-bold flex flex-col gap-2 shadow-md hover:shadow-lg transition-shadow cursor-pointer">
+								<img src={product.images[0]} alt={product.name} className="aspect-square object-cover rounded-md mb-2" />
+								<h2>
 									MO{product.sku} - {product.name}
 								</h2>
 								<p className="text-[#667479] text-xs tracking-wide">

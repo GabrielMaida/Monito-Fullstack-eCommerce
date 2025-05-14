@@ -8,3 +8,8 @@
 		font-size: 0.8rem;
 	}
 }
+
+html {
+	--scroll-behavior: smooth !important;
+	scroll-behavior: smooth !important;
+}

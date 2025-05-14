@@ -4,8 +4,7 @@ type ButtonProps = {
 };
 
 const DarkButton = ({ text, weight = "normal" }: ButtonProps) => {
-	let fontWeight =
-		"inline-block py-2 px-8 rounded-full bg-[#003459] text-white text-base border-2 border-transparent hover:bg-transparent hover:text-[#003459] hover:border-[#003459] transition hover:cursor-pointer hover:font-medium";
+	let fontWeight = "py-2 px-8 rounded-full bg-[#003459] text-white text-base border-2 border-transparent hover:bg-transparent hover:text-[#003459] hover:border-[#003459] transition hover:cursor-pointer hover:font-medium";
 
 	if (weight === "bold") {
 		fontWeight += " font-semibold hover:font-semibold";
