@@ -12,20 +12,20 @@ The Monito eCommerce platform was built to create a complete online shopping exp
 
 ### **Frontend**
 
--   **Framework**: React 19 with React Router DOM 7
--   **Build Tool**: Vite 6
--   **Language**: TypeScript 5.7
--   **Styling**: Tailwind CSS 4
--   **Asset Management**: SVG integration with vite-plugin-svgr
--   **Package Manager**: npm
+-   **Framework**: React with React Router
+-   **Build Tool**: Vite
+-   **Language**: TypeScript
+-   **Styling**: Tailwind CSS
+-   **Asset Management**: SVG Integration with vite-plugin-svgr
+-   **Package Manager**: NPM
 
 ### **Backend**
 
--   **Framework**: NestJS 11
--   **Language**: TypeScript 5.7
--   **Database ODM**: Mongoose 8.14
--   **API Design**: RESTful architecture
--   **Package Manager**: npm
+-   **Framework**: NestJS
+-   **Language**: TypeScript
+-   **Database ODM**: Mongoose
+-   **API Design**: RESTful Architecture
+-   **Package Manager**: NPM
 
 ### **Database**
 
@@ -81,7 +81,65 @@ The backend exposes the following REST endpoints:
 
 ## 📂 Project Structure
 
-monito-fullstack-ecommerce/ ├── .gitignore ├── LICENSE ├── README.md ├── requests.http # API request examples ├── BackEnd/ │ ├── src/ │ │ ├── main.ts # App bootstrap │ │ ├── app.module.ts # Root module │ │ ├── app.controller.ts # Root controller │ │ ├── app.service.ts # Root service │ │ └── products/ │ │ ├── product.module.ts │ │ ├── product.controller.ts │ │ ├── interfaces/ │ │ │ └── IProductEntity.ts │ │ ├── repositories/ │ │ │ └── product.repository.ts │ │ ├── schemas/ │ │ │ └── product.schema.ts │ │ └── services/ │ │ └── product.service.ts │ ├── nest-cli.json │ ├── package.json │ ├── tsconfig.json │ └── tsconfig.build.json ├── FrontEnd/ │ ├── src/ │ │ ├── app.tsx # Main React application │ │ ├── assets/ │ │ │ └── svgs/ # SVG assets │ │ ├── components/ │ │ │ ├── home/ # Home page components │ │ │ ├── product/ # Product detail components │ │ │ ├── products/ # Products listing components │ │ │ └── utils/ # Shared UI components │ │ ├── interfaces/ │ │ │ └── IProductEntity.ts │ │ ├── pages/ │ │ │ ├── home.page.tsx │ │ │ ├── product.page.tsx │ │ │ └── products.page.tsx │ │ └── styles/ # CSS styles │ ├── public/ │ │ ├── fonts/ # Font files │ │ ├── imgs/ # Image assets │ │ └── svgs/ # Public SVG files │ ├── index.html │ ├── package.json │ ├── vite.config.ts │ └── tsconfig.json └── docs/ # Documentation assets ├── folders.png ├── home.png └── product.png
+Below is the folder structure of the Monito eCommerce project:
+
+```sh
+monito-fullstack-ecommerce/
+├── .gitignore
+├── LICENSE
+├── README.md
+├── requests.http             # API request examples
+├── BackEnd/
+│   ├── src/
+│   │   ├── main.ts           # Entry point for NestJS application
+│   │   ├── app.module.ts     # Main application module that imports other modules
+│   │   ├── app.controller.ts # Root controller handling base routes
+│   │   ├── app.service.ts    # Root service providing basic application functionality
+│   │   └── products/
+│   │       ├── product.module.ts
+│   │       ├── product.controller.ts
+│   │       ├── interfaces/
+│   │       │   └── IProductEntity.ts
+│   │       ├── repositories/
+│   │       │   └── product.repository.ts
+│   │       ├── schemas/
+│   │       │   └── product.schema.ts
+│   │       └── services/
+│   │           └── product.service.ts
+│   ├── nest-cli.json
+│   ├── package.json
+│   ├── tsconfig.json
+│   └── tsconfig.build.json
+├── FrontEnd/
+│   ├── src/
+│   │   ├── app.tsx            # Main React application
+│   │   ├── assets/
+│   │   │   └── svgs/          # SVG assets
+│   │   ├── components/
+│   │   │   ├── home/          # Home page components
+│   │   │   ├── product/       # Product detail components
+│   │   │   ├── products/      # Products listing components
+│   │   │   └── utils/         # Shared UI components
+│   │   ├── interfaces/
+│   │   │   └── IProductEntity.ts
+│   │   ├── pages/
+│   │   │   ├── home.page.tsx
+│   │   │   ├── product.page.tsx
+│   │   │   └── products.page.tsx
+│   │   └── styles/            # CSS styles
+│   ├── public/
+│   │   ├── fonts/             # Font files
+│   │   ├── imgs/              # Image assets
+│   │   └── svgs/              # Public SVG files
+│   ├── index.html
+│   ├── package.json
+│   ├── vite.config.ts
+│   └── tsconfig.json
+└── docs/                      # Documentation
+    ├── folders.png
+    ├── home.png
+    └── product.png
+```
 
 ## 🚀 Getting Started
 
@@ -93,38 +151,48 @@ monito-fullstack-ecommerce/ ├── .gitignore ├── LICENSE ├── REA
 
 ### Installation & Setup
 
-1. Clone the repository:
+1. **Clone the repository:**
 
     ```bash
-
     git clone https://github.com/yourusername/monito-fullstack-ecommerce.git
     cd monito-fullstack-ecommerce
-
     ```
 
-    Install frontend dependencies:
+2. **Install Frontend Dependencies:**
+
+    ```bash
     cd FrontEnd
     npm install
+    ```
 
-Install backend dependencies:
-cd ../BackEnd
-npm install
+3. **Install Backend Dependencies:**
+    ```bash
+    cd ../BackEnd
+    npm install
+    ```
 
-Running the Application
-Start the backend server:
-cd BackEnd
-npm run start:dev
+### Running the Application
 
-The API will be available at http://localhost:3101/api
+-   **Start the Backend Server:**
 
-In a new terminal, start the frontend development server:
-cd FrontEnd
-npm run dev
+    ```bash
+    cd BackEnd
+    npm start
+    ```
 
-The frontend will be available at http://localhost:5173
+    The API will be available at [http://localhost:3101/api](http://localhost:3101/api).
 
-Database Access
-The application is pre-configured to connect to a MongoDB Atlas database with a read-only user. No additional database setup is required for running the application.
+-   **Start the Frontend Development Server** (open a new terminal):
+    ```bash
+    cd FrontEnd
+    npm run dev
+    ```
+    The frontend will be available at [http://localhost:5173](http://localhost:5173).
 
-📝 License
-This project is licensed under the MIT License - see the LICENSE file for details. ```
+### Database Access
+
+The application is pre-configured to connect to a MongoDB Atlas database with a read-only user. No additional database setup is necessary.
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
