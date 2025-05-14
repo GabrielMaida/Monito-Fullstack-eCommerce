@@ -1,7 +1,7 @@
-import DarkButton from "./darkbutton";
-import LightButton from "./lightbutton";
+import DarkButton from "../utils/darkbutton.utils";
+import LightButton from "../utils/lightbutton.utils";
 
-function Hero() {
+export default function Hero() {
 	return (
 		<div className="flex-grow w-4/5 m-auto">
 			<div className="flex flex-col sm:w-3/4 md:7/10 lg:w-3/5 xl:w-2/5 py-10">
@@ -20,5 +20,3 @@ function Hero() {
 		</div>
 	);
 }
-
-export default Hero;

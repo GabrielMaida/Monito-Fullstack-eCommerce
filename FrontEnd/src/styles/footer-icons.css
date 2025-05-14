@@ -1,0 +1,27 @@
+.facebook:hover {
+	path {
+		fill: #1877f2;
+		transition: fill 0.1s;
+	}
+}
+
+.twitter:hover {
+	path {
+		fill: #1d9aee;
+		transition: fill 0.1s;
+	}
+}
+
+.instagram:hover {
+	path {
+		fill: #c23c78;
+		transition: fill 0.1s;
+	}
+}
+
+.youtube:hover {
+	path {
+		fill: #ff0033;
+		transition: fill 0.1s;
+	}
+}
