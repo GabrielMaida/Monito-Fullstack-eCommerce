@@ -1,5 +1,8 @@
 {
 	"name": "monito-frontend",
+	"description": "FrontEnd Monito",
+	"author": "Gabriel Antônio Maida",
+	"license": "MIT",
 	"private": true,
 	"version": "0.0.1",
 	"type": "module",
